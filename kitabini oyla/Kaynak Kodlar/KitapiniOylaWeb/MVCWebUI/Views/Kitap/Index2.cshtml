@@ -1,0 +1,43 @@
+﻿@model KitapListViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+
+}  
+
+
+<h4 style="color:darkgoldenrod">Puan Sıralaması</h4>
+<table class="table table">
+    <tr>
+        <th>Kitap Adı</th>
+        <th>Kitap Puanı</th>
+    </tr>
+    @foreach (var kitap in Model.Kitap)
+    {
+        if (kitap.Puan > 10)
+        {
+            <tr>
+
+                <td><img src="@kitap.Resim" width="40" height="40" />  @kitap.KitapAdi</td>
+
+                <td><button class="btn btn-success" style="border-radius:20" disabled>@kitap.Puan</button> </td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+
+                <td><img src="@kitap.Resim" width="40" height="40" />  @kitap.KitapAdi</td>
+
+                <td><button class="btn btn-warning" style="border-radius:20" disabled>@kitap.Puan</button> </td>
+            </tr>
+        }
+
+
+
+
+    }
+
+
+</table>

@@ -1,0 +1,67 @@
+﻿@model PuanlamaModel
+
+@{
+    Layout = "_Layout";
+}
+
+<form asp-action="Puanla" asp-controller="Kitap" method="post" enctype="multipart/form-data">
+
+
+
+    <div class="form-group">
+        <label>Kitap Puanı:</label>
+        <span asp-validation-for="@Model.Puan" class="text-warning"></span>
+        <button class=" btn btn-info" disabled>@Model.Puan</button>
+
+    </div>
+
+
+
+
+    <div class="form-group">
+        <label>Kitap Yorumunuz:</label>
+        <span asp-validation-for="@Model.Yorum" class="text-warning"></span>
+        <input asp-for="@Model.Yorum" class="form-control" />
+
+    </div>
+
+    <div class="form-group">
+        <label>İsminiz:</label>
+        <span asp-validation-for="@Model.YorumAdi" class="text-warning"></span>
+        <input asp-for="@Model.YorumAdi" class="form-control" />
+
+    </div>
+
+
+
+
+
+
+    <div class="form-group">
+
+        <button name="submit" type="submit" class="btn btn-primary" id="puanBtn">Puan Ver</button>
+    </div>
+
+
+</form>
+
+<script>
+    $('#puanBtn').click(function () {
+
+
+
+    }
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+

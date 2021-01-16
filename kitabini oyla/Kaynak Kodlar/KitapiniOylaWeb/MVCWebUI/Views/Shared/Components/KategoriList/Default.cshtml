@@ -1,0 +1,23 @@
+﻿@model KategoriListViewModel
+
+@{
+    ViewBag.Title = "title";
+    
+
+}
+
+<h2>Kitap Listesi</h2>
+<div class="list-group">
+
+    <a href="/kitap/index" class="list-group-item">Tüm Liste</a>
+    @foreach (var kategori in Model.Kategoriler)
+    {
+        var css = "list-group-item";
+        if(kategori.KategoriId == Model.currentKategori)
+        {
+            css += " active";
+        }
+        <a href="/kitap/index?kategori=@kategori.KategoriId" class="@css">@kategori.KategoriAdi</a>
+
+    }
+</div>

@@ -1,0 +1,29 @@
+﻿@model KitapListViewModel
+
+
+
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+
+
+}
+
+<div class="text-center">
+    <img src ="https://www.launchpads.com.au/assets/css/icons/animated/search/animat-search.gif" width="150" height="150" />
+    <form asp-action="KitapAra" asp-controller="Home" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label>Kitap Arama</label>
+            <span asp-validation-for="@Model.KitapAdi" class="text-danger"></span>
+            <input asp-for="@Model.KitapAdi" class="form-control" placeholder="Kitap Adı Girin" />
+        </div>
+
+        <button class="btn btn-success" type="submit">ARA</button>
+    </form>
+
+
+
+
+</div>

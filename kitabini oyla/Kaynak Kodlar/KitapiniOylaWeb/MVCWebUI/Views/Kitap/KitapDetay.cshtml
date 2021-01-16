@@ -1,0 +1,62 @@
+﻿@model KitapListViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+
+}   
+    <div class="table col-md-3" style="float:left;margin-right:300px" width="50px" >
+        <table class="table" width="100px" >
+         
+            @foreach (var kitap in Model.Kitap)
+            {
+                <tr>
+                    <td>
+                        <img src="@kitap.Resim" width="200px" height="200px" align="middle" /><br />
+                    </td>
+                </tr>
+                <tr><td>@kitap.KitapAciklama</td></tr>
+
+                <tr><td>Kitap Adı : @kitap.KitapAdi</td></tr>
+                <tr>
+                    <td>Kategori :  @kitap.KategoriAdi</td>
+                </tr>
+                <tr><td>Yazar : @kitap.Yazar</td></tr>
+                    
+                
+
+                <tr><td class="table-success" align="center">@kitap.Puan</td></tr>
+                <td><a class="btn btn-primary" asp-action="Puanla" asp-controller="Kitap" asp-route-id="@kitap.Id">Puan Ver</a></td>
+            }
+
+        </table>
+    </div>
+
+    <div class="table-striped" style="float:right">
+        <table class="table" style="float:right" >
+            <tr>
+                <th>Yorumlar</th>
+
+            </tr>
+            @foreach (var yorum in Model.Yorumlar)
+            {
+                <tr>
+                    <td>@yorum.Yorum  <br /> <p align="right"><sub>@yorum.YorumAdi</sub> </p> </td>
+
+
+                </tr>
+
+            }
+
+
+
+        </table>
+
+        
+
+
+    </div>
+
+
+
+

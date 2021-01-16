@@ -1,0 +1,73 @@
+﻿@model GuncelleModel
+
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+
+}
+
+
+
+<form asp-action="Guncelle" asp-controller="Admin" method="post" enctype="multipart/form-data">
+
+    <input type="hidden" asp-for="@Model.Id" />
+    <div class="form-group">
+        <label>Kitap Adı:</label>
+        <span asp-validation-for="@Model.KitapAdi" class="text-danger"></span>
+        <input asp-for="@Model.KitapAdi" class="form-control" placeholder="Kitabın Adı" />
+    </div>
+
+    <div class="form-group">
+        <label>Yazar:</label>
+        <span asp-validation-for="@Model.Yazar" class="text-danger"></span>
+        <input asp-for="@Model.Yazar" class="form-control" placeholder="Yazarsız Kitap Olmaz" />
+    </div>
+
+    <div class="form-group">
+        <label>Kategori:</label>
+        <span asp-validation-for="@Model.KategoriId" class="text-danger"></span>
+        <select asp-for="@Model.KategoriId" class="form-control">
+            <option value="1">Klasik</option>
+            <option value="2">Gizem</option>
+            <option value="4">Korku</option>
+            <option value="3">Tarih</option>
+            <option value="5">Edebiyat</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Kategori Adı Belirle:</label>
+        <span asp-validation-for="@Model.Kategori" class="text-danger"></span>
+        <input asp-for="@Model.Kategori" class="form-control" placeholder="Kullanıcıların Bulması için Kategori" />
+    </div>
+
+
+    <div class="form-group">
+        <label>Kitap Resmi:</label>
+        <span asp-validation-for="@Model.Resim" class="text-danger"></span>
+        <input asp-for="@Model.Resim" class="form-control" placeholder="internetten Kopyaladığınız Url Adresi olabilir." />
+    </div>
+
+
+    <div class="form-group">
+        <label>Puan:</label>
+        <span asp-validation-for="@Model.Puan" class="text-danger"></span>
+        <input asp-for="@Model.Puan" class="form-control" placeholder="Bir puan 1 puandır." />
+    </div>
+
+
+    <div class="form-group">
+        <label>Kitap Yorum Id'si:</label>
+        <span asp-validation-for="@Model.YorumId" class="text-danger"></span>
+        <input asp-for="@Model.YorumId" class="form-control" />
+    </div>
+
+    <div class="form-group">
+
+        <a class="btn btn-primary" asp-action="Index" asp-controller="Admin">Geri Dön</a>
+
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+
+
+</form>

@@ -1,0 +1,11 @@
+Staj raporu içerisinde de belirtilmiş olup kaynak kod dosyası masa üstüne çıkarıldıktan sonra
+
+Visual Studio çalıştırılıp proje dosyası seçilmelidir. Sadece kaynak kodları atmak zor olduğu ve projenin
+incelenebilir olması için dosyalar hazır halde atılmıştır. Hali hazırda bir websitem olmadığı için program
+ile bakılması gerekiyor.
+
+
+Admin sayfası için localhost kısmından sonra örn(localhost:2114) /admin yazılarak admin sayfasına geçiş yapılabilir.
+
+Admin sayfası şifre : 1234
+

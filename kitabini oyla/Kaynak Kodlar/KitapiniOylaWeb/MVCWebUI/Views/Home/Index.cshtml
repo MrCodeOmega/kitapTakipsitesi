@@ -1,0 +1,37 @@
+﻿@model KitapListViewModel
+
+
+
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+    
+    
+    }
+
+<div class="text-center">
+    <h1 class="display-4" style="color:burlywood">....Hoş Geldiniz....</h1>
+    <h3>Kitabınızı Oylayın, Yorumlayın, Yeni Dünyalar Keşfedin.</h3>
+   <img src="https://thumbs.gfycat.com/TediousPlumpJackrabbit-size_restricted.gif" />
+    <h4>Tamamen Özgür ve Bağımsız Olarak Kitap Keşfedebileceğiniz Tek Sayfa</h4>
+    <br />
+    <h4>← Hemen Sol taraftan Kitap Listesine Bakabilir</h4>
+    <h4>↓ Aşağıdan Kitap Arayabilirsiniz. </h4>
+
+
+    <form asp-action="KitapAra" asp-controller="Home" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label>Kitap Arama</label>
+            <span asp-validation-for="@Model.KitapAdi" class="text-danger"></span>
+            <input asp-for="@Model.KitapAdi" class="form-control" placeholder="Kitap Adı Girin" />
+        </div>
+
+        <button class="btn btn-success" type="submit">ARA</button>
+    </form>
+
+
+
+
+</div>

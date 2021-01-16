@@ -1,0 +1,44 @@
+﻿@model YorumSilModel
+
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+
+}
+
+
+
+<h3>Dikkat Bu Sayfa Mevcut Yorumları Siler</h3>
+
+
+@foreach (var yorum in Model.Yorumlar)
+{
+<form asp-action="YorumSil" asp-controller="Admin" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="@yorum.Yorum" />
+    <div class="form-group">
+        <label>Yorum:</label>
+        <span asp-validation-for="@yorum.Yorum" class="text-danger"></span>
+        <input asp-for="@yorum.Yorum" class="form-control" placeholder="Yorumu Düzelt" />
+    </div>
+
+    <input type="hidden" asp-for="@yorum.YorumAdi" />
+    <div class="form-group">
+        <label>Yorum Yapan:</label>
+        <span asp-validation-for="@yorum.YorumAdi" class="text-danger"></span>
+        <input asp-for="@yorum.YorumAdi" class="form-control" placeholder="Yorum Adını Düzelt" />
+    </div>
+    <input type="hidden" asp-for="@yorum.YorumId" />
+    <div class="form-group">
+        <label>Kitap Adı:</label>
+        <span asp-validation-for="@yorum.YorumId" class="text-danger"></span>
+        <input asp-for="@yorum.YorumId" class="form-control" placeholder="Kitabın Adı" />
+    </div>
+    <a class="btn btn-danger" asp-action="YorumSil2" asp-controller="Admin" asp-route-id="@yorum.Id">Yorum Sil</a>
+</form>
+        }
+
+
+
+
+

@@ -1,0 +1,38 @@
+﻿@model KitapListViewModel
+
+
+@{
+    ViewBag.Title = "title";
+    Layout = "MyLayout";
+
+}
+
+
+
+<h2>Admin Panel</h2>
+<table class="table table-responsive" width="100%">
+    <tr>
+        <th>Kitap Adı</th>
+        <th>Kitap Yorum Id </th>
+        <th>Kategorisi</th>
+        <th>Puanı</th>
+        <th>Yazar</th>
+    </tr>
+    @foreach (var kitap in Model.Kitap)
+    {
+        <tr>
+            <td>@kitap.KitapAdi</td>
+            <td><button class="btn btn-outline-dark" disabled> @kitap.YorumId</button></td>
+            <td>@kitap.KategoriAdi</td>
+            <td>@kitap.Puan</td>
+            <td>@kitap.Yazar</td>
+            <td><img src="@kitap.Resim" width="70px" height="70px" /></td>
+            <td><a class="btn btn-warning" asp-action="Guncelle" asp-controller="Admin" asp-route-id="@kitap.Id">Guncelle</a></td>
+            <td><a class="btn btn-danger" asp-action="Sil" asp-controller="Admin" asp-route-id="@kitap.Id">Sil</a></td>
+            <td><a class="btn btn-danger" asp-action="YorumSil" asp-controller="Admin" asp-route-id="@kitap.Id">Yorum Sil</a></td>
+        </tr>
+    }
+
+</table>
+
+

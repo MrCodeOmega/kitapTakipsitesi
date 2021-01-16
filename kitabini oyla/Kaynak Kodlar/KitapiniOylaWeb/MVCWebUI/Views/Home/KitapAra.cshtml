@@ -1,0 +1,48 @@
+﻿@model KitapAraModel
+
+
+    <div style="float:left;margin-right:300px" width="50px">
+        <table class="table">
+
+
+            @foreach (var kitap in Model.Kitap)
+            {
+
+
+                <tr>
+                    <td><img src="@kitap.Resim" width="200px" height="200px" align="middle" /></td>
+                </tr>
+
+                <tr><td>@kitap.KitapAdi</td></tr>
+                <tr>
+                    <td>@kitap.KategoriAdi</td>
+                    <td>@kitap.Yazar</td>
+                </tr>
+                <tr>  <td class="table-success" align="center">@kitap.Puan</td></tr>
+                <tr><td><a class="btn btn-primary" asp-action="Puanla" asp-controller="Kitap" asp-route-id="@kitap.Id">Puan Ver</a></td></tr>
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </table>
+
+        <p>Aradığın Kitabı Bulamadın mı ?</p><br />
+        <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="KitapAraa">Geri Dön </a>
+
+
+    </div>
+  
